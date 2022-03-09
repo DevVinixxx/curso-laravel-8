@@ -21,4 +21,4 @@ Route::get('/post/create', [PostController::class, 'create'])->name('post.create
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
