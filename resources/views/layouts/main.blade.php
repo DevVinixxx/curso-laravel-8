@@ -23,21 +23,15 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-light  bg-secondary">
                 <div class="collapse navbar-collapse " id="navbar" >
-                    <a href="#" class="navbar-brand">
+                    <a href="{{ route('home') }}" class="navbar-brand">
                         <img src="/img/home.png" alt="PeresDev" style="height: 55px">
                     </a>
                     <ul class="navbar-nav" id="navbar-txt">
                         <li class="nav-item ">
-                            <a href="/" class="nav-link">Home</a>
+                            <a href="{{ route('home') }}" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/eventos/criar" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/eventos/entrar" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/eventos/cadastrar" class="nav-link">Home</a>
+                            <a href="{{ route('post.index') }}" class="nav-link">Post</a>
                         </li>
                     </ul>
                 </div>

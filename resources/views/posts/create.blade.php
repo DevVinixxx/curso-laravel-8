@@ -1,16 +1,26 @@
 @extends('layouts.main')
 @section('title','Welcome')
 @section('content')
-<div class="bg-light">
-    <div class="container">
-    <h1>cadastrar novo post</h1>
-
+<div class="p-3">
+    <h1>Cadastrar novo post</h1>
+    @if ($errors->any())
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
     <form action="{{ route('posts.store') }}" method="post">
         @csrf
-            <input type="text" name="title" id="title" placeholder="Titulo">
-            <textarea name="content" id="content" cols="30" rows="4"></textarea>
+        <div class="row">
+            <div class="form-group p-1">
+                <input type="text" name="title" id="title" placeholder="Titulo" value="{{ old('title') }}">
+            </div>
+            <div class="form-group p-1">
+                <textarea name="content" id="content" cols="30" rows="4" placeholder="Descrição">{{ old('content') }}</textarea>
+            </div>
             <button type="submit">Enviar</button>
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
 @endsection
