@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Welcome')
+@section('title','Create')
 @section('content')
 <div class="p-3">
     <h1>Cadastrar novo post</h1>
