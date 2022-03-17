@@ -16,12 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::delete('/post/{id}', [PostController::class,'destroy'])->name('posts.destroy');
-Route::get('/post/{id}',[PostController::class,'show'])->name('posts.show');
+Route::delete('/post/{id}/delete', [PostController::class,'destroy'])->name('posts.destroy');
+
+Route::get('/post/{id}/show',[PostController::class,'show'])->name('posts.show');
+
 Route::post('/post', [PostController::class, 'store'])->name('posts.store');
+
 Route::get('/post',[ PostController::class,'index'])->name('post.index');
+
 Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', function () {return view('welcome');})->name('home');
+    
+

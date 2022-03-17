@@ -29,20 +29,18 @@ class PostController extends Controller
         $post = Post::find($id);
 
         if(!$post){
-            return redirect()->route('post.create');
+            return redirect()->route('post.index');
         }
 
         return view('posts.show',compact('post'));
     }
 
     public function destroy($id){
-        if(!$post = Post::find($id)){
-            return redirect()->route('post.create');
+        if(!$post = Post::find($id))
+            return redirect()->route('post.index');
 
             $post->delete();
-        }
-        return redirect()->route('post.create')->with('message','Post deletado com sucesso ');
-            
-            
+        
+        return redirect()->route('post.index')->with('message','Post deletado com sucesso ');  
     }
 }
