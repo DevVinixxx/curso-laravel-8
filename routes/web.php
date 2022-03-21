@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::put('/post/{id}/', [PostController::class, 'update'])->name('posts.update');
+
+Route::get('post/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
+
 Route::delete('/post/{id}/delete', [PostController::class,'destroy'])->name('posts.destroy');
 
 Route::get('/post/{id}/show',[PostController::class,'show'])->name('posts.show');

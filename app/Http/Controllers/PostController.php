@@ -21,11 +21,21 @@ class PostController extends Controller
 
        Post::create($request->all());
        
-       return redirect()->route('post.index');
+       return redirect()->route('post.index')->with('message','Post criado com sucesso!');
+    }
+
+    
+
+    public function destroy($id){
+        if(!$post = Post::find($id))
+            return redirect()->route('post.index');
+
+            $post->delete();
+        
+        return redirect()->route('post.index')->with('message','Post deletado com sucesso ');  
     }
 
     public function show($id){
-        //$post = Post::where('id', $id)->first();
         $post = Post::find($id);
 
         if(!$post){
@@ -35,12 +45,21 @@ class PostController extends Controller
         return view('posts.show',compact('post'));
     }
 
-    public function destroy($id){
-        if(!$post = Post::find($id))
-            return redirect()->route('post.index');
+    public function edit($id){
+        if(!$post = Post::find($id)){
+            return redirect()->back();
+        }
 
-            $post->delete();
-        
-        return redirect()->route('post.index')->with('message','Post deletado com sucesso ');  
+        return view('posts.edit', compact('post'));
+    }
+
+    public function update(StoreUpdatePost $request, $id){
+        if(!$post = Post::find($id)){
+            return redirect()->back();
+        }
+
+        $post->update($request->all());
+
+        return redirect()->route('post.index')->with('message','Post Editado com sucesso!');
     }
 }

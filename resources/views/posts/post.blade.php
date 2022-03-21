@@ -15,8 +15,9 @@
         <h3>Todos os Posts: </h3>
         @foreach ($posts as $post)
             <p>{{ $post->title }}
-            [ <a href="{{ route('posts.show', $post->id) }}">Ver</a> ] 
-        </p>
+            [ <a href="{{ route('posts.show', $post->id) }}">Ver</a> ] |
+            [ <a href="{{ route('posts.edit', $post->id) }}">Editar</a>]
+            </p>
         @endforeach
     </div>
 </div>
