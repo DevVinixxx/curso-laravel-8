@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     public function index(){
         
-        $posts= Post::get();
+        $posts= Post::orderBy('id')->paginate(3);
 
         return view('posts.post', compact('posts'));
     }
