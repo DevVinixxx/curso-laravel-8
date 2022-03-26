@@ -62,4 +62,15 @@ class PostController extends Controller
 
         return redirect()->route('post.index')->with('message','Post Editado com sucesso!');
     }
+
+    public function search(Request $request){
+
+        $filters = $request->except('_token');
+
+       $posts= Post::where('title','%{$request->search}%')
+                        ->orWhere('content', 'LIKE', "%{$request->search}%")
+                        ->paginate(3);
+                        
+        return view('posts.post', compact('posts','filters'));
+    }
 }
