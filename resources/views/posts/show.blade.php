@@ -15,8 +15,7 @@
             <input type="hidden" name="_method" value="DELETE" id="">
             <button type="submit">Deletar post {{ $post->title }}</button>
         </form>
-        <a href="{{ route('post.create') }}">Criarrrr</a>
-        <div class="button">
+        <div class="button p-1 m-1">
             <a class="btn btn-primary" href="{{ route('post.index') }}" role="button">Voltar</a>
         </div>
     </div>
