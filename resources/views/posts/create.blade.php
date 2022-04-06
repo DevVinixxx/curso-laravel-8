@@ -19,7 +19,7 @@
             <div class="form-group m-1">
                 <textarea name="content" id="content" cols="30" rows="4" placeholder="Descrição">{{ old('content') }}</textarea>
             </div>
-            <button class="" type="submit">Enviar</button>
+            <button  class="btn btn-primary" type="submit">Enviar</button>
         </div>
     </form>
 </div>

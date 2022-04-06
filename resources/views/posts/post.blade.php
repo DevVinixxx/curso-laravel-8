@@ -6,7 +6,7 @@
         <div>
             <h1>View de Posts</h1>
             <hr>
-                <a href="{{ route('post.create') }}">Criar novo post</a>
+                <a href="{{ route('post.create') }}"  class="btn btn-primary">Criar novo post</a>
             <hr>
             @if (session('message'))
                 <div class="bg-success">
@@ -18,7 +18,7 @@
             <form action="{{ route('posts.search') }}" method="post">
                 @csrf
                 <input type="text" name="search" placeholder="Filtrar">
-                <button type="submit" class="rounded">Filtrar</button>
+                <button type="submit" class="btn btn-primary">Filtrar</button>
             </form>
         </div>
         <div class="m-3">

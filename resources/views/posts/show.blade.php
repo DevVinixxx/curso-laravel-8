@@ -13,7 +13,7 @@
         <form action="{{ route('posts.destroy', $post->id) }}" method="post">
             @csrf
             <input type="hidden" name="_method" value="DELETE" id="">
-            <button type="submit">Deletar post {{ $post->title }}</button>
+            <button type="submit" class="btn btn-primary">Deletar post {{ $post->title }}</button>
         </form>
         <div class="button p-1 m-1">
             <a class="btn btn-primary" href="{{ route('post.index') }}" role="button">Voltar</a>
@@ -21,3 +21,4 @@
     </div>
 </div>
 @endsection
+
