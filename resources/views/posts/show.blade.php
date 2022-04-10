@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Welcome')
+@section('title',"Post $post->title")
 @section('content')
 <div class="p-2">
     <div class="">

@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Home')
+@section('title','Inicio')
 @section('content')
 <div>
     <h1>Pagina inicial</h1>  

@@ -5,21 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title> @yield('title')</title>
-        <link rel="stylesheet" href="">
 
-        <!-- Fonte google -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
         <!-- CSS Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+        
         <!-- Styles -->
         <link rel="stylesheet" href="/css/styles.css">
     </head>
-    <body>
+    <body class="text-center">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light  bg-secondary">
                 <div class="collapse navbar-collapse " id="navbar" >

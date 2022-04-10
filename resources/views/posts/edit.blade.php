@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Edit')
+@section('title'," Editar post $post->title ")
 @section('content')
 <div class="container text-center">
     <h1>Editar o post {{ $post->title }}</h1>
@@ -20,7 +20,7 @@
             <div class="form-group m-1">
                 <textarea name="content" id="content" cols="30" rows="4" placeholder="Descrição">{{ $post->content }}</textarea>
             </div>
-            <button class="" type="submit">Atualizar</button>
+            <button class="btn btn-primary" type="submit">Atualizar</button>
         </div>
     </form>
 </div>
