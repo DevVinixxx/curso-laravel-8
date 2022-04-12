@@ -32,6 +32,10 @@ Route::post('/post', [PostController::class, 'store'])->name('posts.store');
 
 Route::get('/post',[ PostController::class,'index'])->name('post.index');
 
-Route::get('/', function () {return view('welcome');})->name('home');
-    
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
+Route::get('/', function () {return view('welcome');})->name('home');
+
+require __DIR__.'/auth.php';
