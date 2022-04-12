@@ -5,6 +5,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUpdatePost;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -43,6 +44,10 @@ class PostController extends Controller
         if(!$post = Post::find($id))
             return redirect()->route('post.index');
 
+            if (Storage::exists($post->image)){
+                Storage::delete($post->image);
+            }
+
             $post->delete();
         
         return redirect()->route('post.index')->with('message','Post deletado com sucesso ');  
@@ -71,7 +76,20 @@ class PostController extends Controller
             return redirect()->back();
         }
 
-        $post->update($request->all());
+        $data = $request->all();
+
+        if($request->image && $request->image->isValid()){
+
+            if (Storage::exists($post->image)){
+                Storage::delete($post->image);
+            };
+            $nameFile = Str::of($request->title)->slug('-'). '.' .$request->image->getClientOriginalExtension();
+
+            $image = $request->image->storeAs('posts', $nameFile);
+            $data['image']=$image;
+        }
+
+        $post->update($data);
 
         return redirect()->route('post.index')->with('message','Post Editado com sucesso!');
     }
