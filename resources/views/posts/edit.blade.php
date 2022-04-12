@@ -10,7 +10,7 @@
             @endforeach
         </ul>
     @endif
-    <form action="{{ route('posts.update', $post->id) }}" method="post">
+    <form action="{{ route('posts.update', $post->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
         <div class="">
@@ -19,6 +19,9 @@
             </div>
             <div class="form-group m-1">
                 <textarea name="content" id="content" cols="30" rows="4" placeholder="Descrição">{{ $post->content }}</textarea>
+            </div>
+            <div class="form-group m-1">
+                <input type="file" name="image" id="image" >
             </div>
             <button class="btn btn-primary" type="submit">Atualizar</button>
         </div>

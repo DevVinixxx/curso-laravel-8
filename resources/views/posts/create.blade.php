@@ -10,7 +10,7 @@
             @endforeach
         </ul>
     @endif
-    <form action="{{ route('posts.store') }}" method="post">
+    <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="">
             <div class="form-group m-1">
@@ -18,6 +18,9 @@
             </div>
             <div class="form-group m-1">
                 <textarea name="content" id="content" cols="30" rows="4" placeholder="Descrição">{{ old('content') }}</textarea>
+            </div>
+            <div class="form-group m-1">
+                <input type="file" name="image" id="image" >
             </div>
             <button  class="btn btn-primary" type="submit">Enviar</button>
         </div>

@@ -8,7 +8,11 @@
         <ul>
             <li><strong> Titutlo: </strong>{{ $post->title }}</li>
             <li><strong> Conteudo: </strong>{{ $post->content }}</li>
+            <li><strong>Imagem: {{ $post->image }}</strong></li>
         </ul>
+        <div>
+            
+        </div>
 
         <form action="{{ route('posts.destroy', $post->id) }}" method="post">
             @csrf
